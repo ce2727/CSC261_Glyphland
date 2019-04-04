@@ -1,0 +1,158 @@
+:root {
+    --color-primary: #2eec96;
+    --selection-color: #abffd9;
+    --unitless-max-font-size: 18;
+}
+
+body {
+    padding: 2rem 1rem;
+    background-color: #2eec96;
+}
+
+form {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+form h1 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-lighter);
+    font-size: var(--font-size-3);
+    text-align: center;
+}
+
+input {
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.75rem;
+}
+
+.help-text {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--font-size-small);
+}
+
+input:placeholder-shown + label {
+    opacity: 0;
+    transform: translateY(1rem);
+}
+
+.has-dynamic-label {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.has-dynamic-label label {
+    position: absolute;
+    top: 0;
+    font-size: var(--font-size-small);
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease-out;
+}
+
+input:required + .help-text::before {
+    content: '*Required';
+}
+
+input:optional + .help-text::before {
+    content: '*Optional';
+}
+
+input:read-only {
+    border-color: var(--gray-lighter) !important;
+    color: var(--gray);
+    cursor: not-allowed;
+}
+
+input:invalid:focus {
+    border-color: var(--color-error);
+}
+
+input:invalid + .help-text {
+    color: var(--color-error);
+}
+
+input[type='email']:invalid + .help-text::before {
+    content: 'You must enter a valid email.'
+}
+
+input:out-of-range + .help-text::before {
+    content: 'Out of range';
+}
+
+input[type='checkbox'] + label {
+    user-select: none;
+}
+
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+button {
+    background-color: #f1f1f1;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  /* Active/current link */
+  .sidenav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidenav a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .hamburger {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }

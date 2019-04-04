@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glyphland - Account Creation</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+            <a class="active" href="account_creation.html">Account Creation</a>
+            <a href="character_creation.html">Character Creation</a>
+            <a href="display.php">Show Tables</a>
+    </div>
+    <div id="main">
+        <center>
+                <h1>ᚸ ᛝ ᚰ ᚣ Glyphland ᚡ ᚳ ᛃ ᛡ</h1>
+        </center>
+            <br>
+        <center>
+            <h2>Account Creation</h2>
+        <form method="POST" action="./action_account_form_submit.php"> 
+            First name:<br>
+            <input type="text" name="firstname" value=""><br><br>
+            Last name:<br>
+            <input type="text" name="lastname" value=""><br><br>
+            Email Address:<br>
+            <input type="text" name="email" value=""><br><br>
+            Password:<br>
+            <input type="text" name="password" value=""><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        </center>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(46, 236, 150, 0.7)";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "#2eec96";
+  }
+</script>
