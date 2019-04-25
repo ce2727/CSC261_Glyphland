@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Glyphland - Account Creation</title>
     <link rel="stylesheet" href="test.css">
+    <script src="utility.js"></script>
 </head>
 <body>
+    <?php
+    $current_firstname = $current_lastname = $current_email = $current_password = "";
+    ?>
+
     <div id="mySidenav" class="sidenav">
             <a class="active" href="account_creation.html">Account Creation</a>
             <a href="character_creation.html">Character Creation</a>
@@ -26,35 +31,20 @@
         <form method="GET" action="./account_search.php"> 
             Email:<br>
             <input type="text" name="email" value=" "><br><br>
-            <input type="submit" value="Search">
+            <input type="submit" onclick="showTable()" value="Search">
         </form>
-        <br><br>
-        <table border='3'>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Password</th>
-            </tr>
-            <tr>
-                <td>Clay</td>
-                <td>Emmel</td>
-                <td>cemmel@u.rochester.edu</td>
-                <td>Endgame</td>
-            </tr>
-        </table>
 
         <br><br>
         <h2>Update Above</h2>
         <form method="POST" action="./account_update.php"> 
             First name:<br>
-            <input type="text" name="firstname" value=""><br><br>
+            <input type="text" name="firstname" value="<?php echo $current_firstname;?>"><br><br>
             Last name:<br>
-            <input type="text" name="lastname" value=""><br><br>
+            <input type="text" name="lastname" value="<?php echo $current_lastname;?>"><br><br>
             Email Address:<br>
-            <input type="text" name="email" value=""><br><br>
+            <input type="text" name="email" value="<?php echo $current_email;?>"><br><br>
             Password:<br>
-            <input type="text" name="password" value=""><br><br>
+            <input type="text" name="password" value="<?php echo $current_password;?>"><br><br>
             <input type="submit" value="Update">
         </form>
         </center>
