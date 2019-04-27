@@ -7,6 +7,18 @@
 <body>
 
 <?php
+
+$FirstName = "Test First Name";
+$LastName = "Test Last Name";
+$Email = "test@gmail.com";
+$Password = "brentIsABigDumbBitch";
+$_POST['FirstName'] = $FirstName;
+$_POST['LastName'] = $LastName;
+$_POST['Email'] = $Email;
+$_POST['Password'] = $Password;
+
+
+/*
 require_once('db_setup.php');
 $sql = "USE bcalabre_1;";
 if ($conn->query($sql) === TRUE) {
@@ -21,7 +33,7 @@ $email = $_GET['email'];
 $realm = $_GET['realm'];
 $ID = rand (4 , 2000000000);
 $sql = "INSERT INTO Avatar values ('$ID','$email', '$displayname', '$class', '0', 'NULL', '$realm');";
-
+*/
 
 
 #$sql = "SELECT * FROM Students where Username like 'amai2';";
