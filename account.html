@@ -11,10 +11,17 @@
 
     <!-- For update form's update/delete functions -->
     <script type="text/javascript">
-        function submitForm(action) {
+        function updateDeleteForm(action) {
           var form = document.getElementById('updateForm');
           form.action = action;
           form.submit();
+        }
+        
+          function searchForm(email) {
+            document.getElementById("results_firstname").value = "Test First Name";
+            document.getElementById("results_lastname").value = "Test Last Name";
+            document.getElementById("results_email").value = "Test Email";
+            document.getElementById("results_password").value = "Test Password";
         }
     </script>
 
@@ -34,25 +41,25 @@
         <center>
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
-        <form method="GET" action="./account_search.php">
+        <form>
             Email:<br>
-            <input type="text" name="email" value=" "><br><br>
-            <input type="submit" onclick="showTable()" value="Search">
+            <input type="text" name="email" value=""><br><br>
+            <input type="submit" onclick="searchForm(' + result.email + ');return false" value="Search">
         </form>
 
-        <br><br>
-        <h2>Update</h2>
+        <br>
         <form id=updateForm method="POST"> 
             First name:<br>
-            <input type="text" name="firstname" value=""><br><br>
+            <input type="text" id="results_firstname" name="results_firstname" value=""><br><br>
             Last name:<br>
-            <input type="text" name="lastname" value=""><br><br>
-            Email Address:<br>
-            <input type="text" name="email" value=""><br><br>
+            <input type="text" id="results_lastname" name="results_lastname" value=""><br><br>
+            Email:<br>
+            <input type="text" id="results_email" name="results_email" value=""><br><br>
             Password:<br>
-            <input type="text" name="password" value=""><br><br>
-            <input type="button" onclick="submitForm('./account_update.php')" value="Update" />
-            <input type="button" onclick="submitForm('./account_delete.php')" value="Delete" />
+            <input type="text" id="results_password" name="results_password" value=""><br><br>
+
+            <input type="button" onclick="updateDeleteForm('./account_update.php')" value="Update" />
+            <input type="button" onclick="updateDeleteForm('./account_delete.php')" value="Delete" />
         </form>
         </center>
         </div>
