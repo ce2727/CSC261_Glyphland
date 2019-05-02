@@ -12,20 +12,34 @@
 
     <!-- For update form's update/delete functions -->
     <script type="text/javascript">
-    
+
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+
         function updateDeleteForm(action) {
           var form = document.getElementById('updateForm');
           form.action = action;
           form.submit();
         }
         
-        /* function searchForm(email) {
-        
-        document.getElementById("results_firstname").value = "Test First Name";
-        document.getElementById("results_lastname").value = "Test Last Name";
-        document.getElementById("results_email").value = "Test Email";
-        document.getElementById("results_password").value = "Test Password";
-    } */
+        function loadForms() {
+            document.getElementById("results_firstname").value = findGetParameter("fname");
+            document.getElementById("results_lastname").value = findGetParameter("lname");
+            document.getElementById("results_email").value = findGetParameter("email");
+            document.getElementById("results_password").value = findGetParameter("password");
+    }
+    
+    loadForms();
     </script>
 
 
@@ -44,11 +58,10 @@
         <center>
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
-        <form id=searchForm method="POST">
+        <form id=searchForm method="POST" action="account.php">
             Email:<br>
             <input type="text" name="email" value=""><br><br>
-            <input type="submit" action="account.php">
-            <!-- onclick="searchForm(' + result.email + ');return false" value="Search -->
+            <input type="submit">
         </form>
 
         <br>
