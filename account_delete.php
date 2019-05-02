@@ -17,10 +17,22 @@ $username = "bcalabre";
 $password = "nqjvrUHZ";
 $database = "bcalabre_1";
 $mysqli = new mysqli("localhost", $username, $password, $database);
-$email = $_POST['email'];
-$query = "DELETE * FROM Account where email='$email'";
+$query = "";
+$operation = "";
 $status = 1;
-$operation = "delete";
+
+
+if (isset($_POST['update_button'])) {
+   //update action
+   $operation = "update";
+} else if (isset($_POST['delete_button'])) {
+   //Delete action
+   $operation = "delete";
+   $query = "DELETE * FROM Account where email='$email'";
+
+}
+
+$email = $_POST['email'];
 
 $conn = mysql_connect($bclabre_1, $username, $password);
    

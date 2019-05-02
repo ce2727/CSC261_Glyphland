@@ -38,7 +38,7 @@
         </form>
 
         <br>
-        <form id=updateForm method="POST"> 
+        <form id=updateForm action="account_delete.php" method="POST"> 
             First name:<br>
             <input type="text" id="results_firstname" name="results_firstname" value=""><br><br>
             Last name:<br>
@@ -48,8 +48,9 @@
             Password:<br>
             <input type="text" id="results_password" name="results_password" value=""><br><br>
 
-            <input type="button" onclick="updateDeleteForm('./account_update.php')" value="Update" />
-            <input type="button" onclick="updateDeleteForm('./account_delete.php')" value="Delete" />
+            <input type="button" name="update_button" value="Update" />
+            <input type="button" name="delete_button" value="Delete" />
+            <br>
             <div id="deleteStatusText" style="visibility: hidden">
                 Entry Deleted
             </div>
@@ -94,7 +95,7 @@
     }
 
     setHidden();
-    
+
     function updateDeleteForm(action) {
       var form = document.getElementById('updateForm');
       form.action = action;
@@ -106,9 +107,8 @@
         document.getElementById("results_firstname").value = findGetParameter("fname");
         document.getElementById("results_lastname").value = findGetParameter("lname");
         document.getElementById("results_password").value = findGetParameter("password");
-}
-console.log(findGetParameter("email"));
-loadForms();
+    }
+    loadForms();
 </script>
 </html>
 
