@@ -20,19 +20,22 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
 $query = "";
 $operation = "";
 $status = 1;
-
+$email = $_POST['results_email'];
+$fname = $_POST['results_firstname'];
+$lname = $_POST['results_lastname'];
+$user_password = $_POST['results_password'];
 
 if (isset($_POST['update_button'])) {
    //update action
    $operation = "update";
+   $query = "UPDATE Account SET Firstname='$fname', Lastname='$lname', Password='$user_password' WHERE email='$email'";
+   
 } else if (isset($_POST['delete_button'])) {
    //Delete action
    $operation = "delete";
-   $query = "DELETE * FROM Account where email='$email'";
-
+   $query = "DELETE FROM Account WHERE email='$email'";
 }
 
-$email = $_POST['email'];
 
 $conn = mysql_connect($bclabre_1, $username, $password);
    
