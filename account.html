@@ -9,40 +9,6 @@
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-
-    <!-- For update form's update/delete functions -->
-    <script type="text/javascript">
-
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                tmp = item.split("=");
-                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
-        }
-
-        function updateDeleteForm(action) {
-          var form = document.getElementById('updateForm');
-          form.action = action;
-          form.submit();
-        }
-        
-        function loadForms() {
-            document.getElementById("results_firstname").value = findGetParameter("fname");
-            document.getElementById("results_lastname").value = findGetParameter("lname");
-            document.getElementById("results_email").value = findGetParameter("email");
-            document.getElementById("results_password").value = findGetParameter("password");
-    }
-    
-    loadForms();
-    </script>
-
-
     <div id="mySidenav" class="sidenav">
             <a class="active" href="account.html">Account Creation</a>
             <a href="character_creation.html">Character Creation</a>
@@ -96,7 +62,29 @@
         </center>
     </div>
 </body>
+<script type="text/javascript">
 
+    function findGetParameter(parameterName) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        return url.searchParams.get(parameterName);
+    }
+
+    function updateDeleteForm(action) {
+      var form = document.getElementById('updateForm');
+      form.action = action;
+      form.submit();
+    }
+    
+    function loadForms() {
+        document.getElementById("results_email").value = findGetParameter("email");
+        document.getElementById("results_firstname").value = findGetParameter("fname");
+        document.getElementById("results_lastname").value = findGetParameter("lname");
+        document.getElementById("results_password").value = findGetParameter("password");
+}
+console.log(findGetParameter("email"));
+loadForms();
+</script>
 </html>
 
 <script>
