@@ -8,6 +8,13 @@
     <title>Glyphland - Account Creation</title>
     <link rel="stylesheet" href="test.css">
 </head>
+<script>
+    function findGetParameter(parameterName) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        return url.searchParams.get(parameterName);
+    }
+</script>
 <body>
     <div id="mySidenav" class="sidenav">
             <a class="active" href="account.html">Account Creation</a>
@@ -43,6 +50,12 @@
 
             <input type="button" onclick="updateDeleteForm('./account_update.php')" value="Update" />
             <input type="button" onclick="updateDeleteForm('./account_delete.php')" value="Delete" />
+            <div id="deleteStatusText" style="visibility: hidden">
+                Entry Deleted
+            </div>
+            <div id="updateStatusText" style="visibility: hidden">
+                Entry Updated
+            </div>
         </form>
         </center>
         </div>
@@ -63,13 +76,25 @@
     </div>
 </body>
 <script type="text/javascript">
+    
+    function setHidden()  
+    {     
+        var operation = findGetParameter("operation");
+        var status = findGetParameter("status");
+        console.log(operation);
+        console.log(status);
 
-    function findGetParameter(parameterName) {
-        var url_string = window.location.href;
-        var url = new URL(url_string);
-        return url.searchParams.get(parameterName);
+        if(operation === "delete" && status === "1"){
+            console.log("yeet")
+            document.getElementById("deleteStatusText").style.visibility="visible"; 
+        }
+        if(operation === "update" && status === "1"){
+            document.getElementById("updateStatusText").style.visibility="visible";
+        }
     }
 
+    setHidden();
+    
     function updateDeleteForm(action) {
       var form = document.getElementById('updateForm');
       form.action = action;

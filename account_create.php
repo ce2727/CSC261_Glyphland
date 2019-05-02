@@ -22,10 +22,10 @@ if ($conn->query($sql) === TRUE) {
    echo "Error using  database: " . $conn->error;
 }
 // Query:
-$fname = $_GET['firstname'];
-$lname = $_GET['lastname'];
-$email = $_GET['email'];
-$password = $_GET['password'];
+$fname = $_POST['firstname'];
+$lname = $_POST['lastname'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 $sql = "INSERT INTO Account values ('$password','$email', '$fname', '$lname');";
 
 
