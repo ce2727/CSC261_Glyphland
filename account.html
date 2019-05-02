@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Glyphland - Account Creation</title>
     <link rel="stylesheet" href="test.css">
@@ -11,18 +12,20 @@
 
     <!-- For update form's update/delete functions -->
     <script type="text/javascript">
+    
         function updateDeleteForm(action) {
           var form = document.getElementById('updateForm');
           form.action = action;
           form.submit();
         }
         
-          function searchForm(email) {
-            document.getElementById("results_firstname").value = "Test First Name";
-            document.getElementById("results_lastname").value = "Test Last Name";
-            document.getElementById("results_email").value = "Test Email";
-            document.getElementById("results_password").value = "Test Password";
-        }
+        /* function searchForm(email) {
+        
+        document.getElementById("results_firstname").value = "Test First Name";
+        document.getElementById("results_lastname").value = "Test Last Name";
+        document.getElementById("results_email").value = "Test Email";
+        document.getElementById("results_password").value = "Test Password";
+    } */
     </script>
 
 
@@ -41,10 +44,11 @@
         <center>
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
-        <form>
+        <form id=searchForm method="POST">
             Email:<br>
             <input type="text" name="email" value=""><br><br>
-            <input type="submit" onclick="searchForm(' + result.email + ');return false" value="Search">
+            <input type="submit" action="account.php">
+            <!-- onclick="searchForm(' + result.email + ');return false" value="Search -->
         </form>
 
         <br>
