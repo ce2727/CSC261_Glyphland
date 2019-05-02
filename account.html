@@ -51,11 +51,8 @@
             <input type="submit" name="update_button" value="Update" />
             <input type="submit" name="delete_button" value="Delete" />
             <br><br>
-            <div id="deleteStatusText" style="visibility: hidden">
-                Entry Deleted
-            </div>
-            <div id="updateStatusText" style="visibility: hidden">
-                Entry Updated
+            <div>
+                <label id="updateStatusText"></label>
             </div>
         </form>
         </center>
@@ -72,6 +69,10 @@
             Password:<br>
             <input type="text" name="password" value=""><br><br>
             <input type="submit" value="Submit">
+            <br><br>
+            <div>
+                    <label id="createStatusText"></label>
+            </div>
         </form>
         </center>
     </div>
@@ -79,18 +80,21 @@
 <script type="text/javascript">
     
     function setHidden()  
-    {     
+    {   
         var operation = findGetParameter("operation");
         var status = findGetParameter("status");
-        console.log(operation);
-        console.log(status);
 
-        if(operation === "delete" && status === "1"){
-            console.log("yeet")
-            document.getElementById("deleteStatusText").style.visibility="visible"; 
+        if(operation === "delete"){
+            if(status === "1") document.getElementById("updateStatusText").innerHTML  = "Entry Deleted";
+            if(status === "0") document.getElementById("updateStatusText").innerHTML  = "Entry Failed To Delete";
         }
-        if(operation === "update" && status === "1"){
-            document.getElementById("updateStatusText").style.visibility="visible";
+        if(operation === "update"){
+            if(status === "1") document.getElementById("updateStatusText").innerHTML  = "Entry Updated";
+            if(status === "0") document.getElementById("updateStatusText").innerHTML  = "Entry Failed To Update";        
+        }
+        if(operation === "create"){
+            if(status === "1") document.getElementById("createStatusText").innerHTML  = "Entry Created";
+            if(status === "0") document.getElementById("createStatusText").innerHTML  = "Failed to Create Entry";        
         }
     }
 

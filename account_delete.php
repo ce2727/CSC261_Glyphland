@@ -29,7 +29,7 @@ if (isset($_POST['update_button'])) {
    //update action
    $operation = "update";
    $query = "UPDATE Account SET Firstname='$fname', Lastname='$lname', Password='$user_password' WHERE email='$email'";
-   
+
 } else if (isset($_POST['delete_button'])) {
    //Delete action
    $operation = "delete";
@@ -52,7 +52,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $status = 0;
       die('Could not get data: ' . mysql_error());
    }
-   header("Location: account.html?operation=$operation&status=$status");
+   header("Location: account.html?operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>

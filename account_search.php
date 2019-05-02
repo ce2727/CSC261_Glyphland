@@ -46,7 +46,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
 
   //echo "value " . $email . "<br>";
 //$conn->close();
-header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$userpassword");
+header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$userpassword#searchForm");
 ?>
 </body>
 </html>
