@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
 
 <!-- Latest compiled and minified CSS -->
@@ -23,15 +25,15 @@ $lname="";
 $userpassword="";
 
 $conn = mysql_connect($bclabre_1, $username, $password);
-
+   
    if(! $conn ) {
       die('Could not connect: ' . mysql_error());
    }
-
+   
    //$sql = 'SELECT * FROM Account where email='$email'';
    mysql_select_db('bcalabre_1');
    $retval = mysql_query( $query, $conn );
-
+   
    if(! $retval ) {
       die('Could not get data: ' . mysql_error());
    }
