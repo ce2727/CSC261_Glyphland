@@ -26,7 +26,8 @@ $class = $_POST['class'];
 $email = $_POST['email'];
 $realm = $_POST['realm'];
 $pid = rand (4 , 2000000000);
-$sql = "INSERT INTO Avatar values ('$pid','$email', '$displayname', '$class', '0', 'NULL', '$realm');";
+$level = 0;
+$sql = "INSERT INTO Avatar values ('$pid','$email', '$displayname', '$class', $level, 'NULL', '$realm');";
 
 
 
@@ -35,7 +36,7 @@ $result = $conn->query($sql);
 if ($result !== TRUE) {
     $status = 0;
 }
-header("Location: character.html?pid=$pid&displayname=$character_name&class=$class&level=0&$clan&realm=$realm&operation=$operation&status=$status#createForm");
+header("Location: character.html?pid=$pid&displayname=$character_name&class=$class&level=$level&realm=$realm&operation=$operation&status=$status#createForm");
 ?>
 
 <?php
