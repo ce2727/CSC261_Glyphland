@@ -42,6 +42,11 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $name = $row['Name'];
    }
 
+   if($name === "")
+   {
+      $status = 0;
+   }
+
 header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel&operation=$operation&status=$status#searchForm");
 ?>
 </body>

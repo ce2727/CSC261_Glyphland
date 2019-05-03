@@ -44,8 +44,11 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $userpassword = $row['Password'];
    }
 
-  //echo "value " . $email . "<br>";
-//$conn->close();
+   if($password === "")
+   {
+      $status = 0;
+   }
+
 header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$userpassword&operation=$operation&status=$status#searchForm");
 ?>
 </body>
