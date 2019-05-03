@@ -161,10 +161,12 @@
     }
     
     function loadForms() {
-        document.getElementById("results_email").value = findGetParameter("email");
-        document.getElementById("results_firstname").value = findGetParameter("fname");
-        document.getElementById("results_lastname").value = findGetParameter("lname");
-        document.getElementById("results_password").value = findGetParameter("password");
+        document.getElementById("results_class").value = findGetParameter("class");
+        document.getElementById("results_displayname").value = findGetParameter("displayname");
+        document.getElementById("results_clan").value = findGetParameter("clan");
+        document.getElementById("results_realm").value = findGetParameter("realm");
+        document.getElementById("results_level").value = findGetParameter("level");
+
     }
     loadForms();
 </script>

@@ -55,7 +55,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $status = 0;
    }
 
-header("Location: character.html?email=$email&fname=$fname&lname=$lname&password=$userpassword&operation=$operation&status=$status#searchForm");
+header("Location: character.html?displayname=$character_name&class=$class&clan=$clan&level=$level&$clan&realm=$realm&operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>
