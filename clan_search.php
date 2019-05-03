@@ -44,6 +44,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
 
    if($name === "")
    {
+      $leaderid = "";
       $status = 0;
    }
 

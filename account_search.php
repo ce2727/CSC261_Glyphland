@@ -46,6 +46,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
 
    if($password === "")
    {
+      $email = "";
       $status = 0;
    }
 
