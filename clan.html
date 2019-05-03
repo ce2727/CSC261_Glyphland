@@ -33,16 +33,20 @@
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
         <form id=searchForm method="POST" action="clan_search.php">
-            Name:<br>
-            <input type="text" name="name" value=""><br><br>
+            Clan Leader ID:<br>
+            <input type="text" name="leaderid" value=""><br><br>
             <input type="submit">
+            <br><br>
+            <div>
+                <label id="searchStatusText"></label>
+            </div>
         </form>
 
         <br>
         <form id=updateForm action="clan_edit.php" method="POST">
             Name:<br>
             <input type="text" id="results_name" name="results_name" value=""><br><br>
-            Leader Id:<br>
+            Leader ID:<br>
             <input type="text" id="results_leaderid" name="results_leaderid" value=""><br><br>
             Minimum Level:<br>
             <input type="text" id="results_minlevel" name="results_minlevel" value=""><br><br>
@@ -58,7 +62,7 @@
         </div>
         <center>
         <h2>Create</h2>
-        <form id=createform method="POST" action="./clan_create.php"> 
+        <form id=createform method="POST" action="clan_create.php"> 
             Name:<br>
             <input type="text" name="name" value=""><br><br>
             Leader Id:<br>
@@ -92,6 +96,9 @@
         if(operation === "create"){
             if(status === "1") document.getElementById("createStatusText").innerHTML  = "Entry Created";
             if(status === "0") document.getElementById("createStatusText").innerHTML  = "Failed to Create Entry";        
+        }
+        if(operation === "search"){
+            if(status === "0") document.getElementById("searchStatusText").innerHTML  = "Failed to Find Entry";        
         }
     }
 

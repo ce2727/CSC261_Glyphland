@@ -18,8 +18,9 @@ $password = "nqjvrUHZ";
 $database = "bcalabre_1";
 $mysqli = new mysqli("localhost", $username, $password, $database);
 $leaderid = $_POST['leaderid'];
-$query = "SELECT * FROM Clan WHERE LeaderID='$leaderid'";
-
+$query = "SELECT * FROM Clan WHERE ClanLeaderID='$leaderid'";
+$operation="search";
+$status="1";
 $name="";
 $minlevel="";
 
@@ -41,7 +42,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $name = $row['name'];
    }
 
-header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel#searchForm");
+header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel&operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>

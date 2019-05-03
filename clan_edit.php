@@ -27,12 +27,12 @@ $minlevel = $_POST['results_minlevel'];
 if (isset($_POST['update_button'])) {
    //update action
    $operation = "update";
-   $query = "UPDATE Clan SET Name='$name', MinLevel='$minlevel' WHERE LeaderID='$leaderid'";
+   $query = "UPDATE Clan SET Name='$name', MinLevel='$minlevel' WHERE ClanLeaderID='$leaderid'";
 
 } else if (isset($_POST['delete_button'])) {
    //Delete action
    $operation = "delete";
-   $query = "DELETE FROM Clan WHERE LeaderID='$leaderid'";
+   $query = "DELETE FROM Clan WHERE ClanLeaderID='$leaderid'";
 }
 
 
