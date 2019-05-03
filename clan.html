@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Glyphland - Accounts</title>
+    <title>Glyphland - Clans</title>
     <link rel="stylesheet" href="test.css">
 </head>
 <script>
@@ -17,37 +17,35 @@
 </script>
 <body>
     <div id="mySidenav" class="sidenav">
-            <a class="active" href="account.html">Accounts</a>
+            <a href="account.html">Accounts</a>
             <a href="character.html">Characters</a>
-            <a href="clan.html">Clans</a>
+            <a class="active" href="clan.html">Clans</a>
             <a href="display.php">Show Tables</a>
     </div>
     <div id="main">
         <center>
                 <h1>ᚸ ᛝ ᚰ ᚣ Glyphland ᚡ ᚳ ᛃ ᛡ</h1>
                 <br>
-                <h1>Accounts</h1>
+                <h1>Clans</h1>
         </center>
             <br>
         <center>
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
-        <form id=searchForm method="POST" action="account_search.php">
-            Email:<br>
-            <input type="text" name="email" value=""><br><br>
+        <form id=searchForm method="POST" action="clan_search.php">
+            Name:<br>
+            <input type="text" name="name" value=""><br><br>
             <input type="submit">
         </form>
 
         <br>
-        <form id=updateForm action="account_edit.php" method="POST">
-            First name:<br>
-            <input type="text" id="results_firstname" name="results_firstname" value=""><br><br>
-            Last name:<br>
-            <input type="text" id="results_lastname" name="results_lastname" value=""><br><br>
-            Email:<br>
-            <input type="text" id="results_email" name="results_email" value=""><br><br>
-            Password:<br>
-            <input type="text" id="results_password" name="results_password" value=""><br><br>
+        <form id=updateForm action="clan_edit.php" method="POST">
+            Name:<br>
+            <input type="text" id="results_name" name="results_name" value=""><br><br>
+            Leader Id:<br>
+            <input type="text" id="results_leaderid" name="results_leaderid" value=""><br><br>
+            Minimum Level:<br>
+            <input type="text" id="results_minlevel" name="results_minlevel" value=""><br><br>
 
             <input type="submit" name="update_button" value="Update" />
             <input type="submit" name="delete_button" value="Delete" />
@@ -60,15 +58,13 @@
         </div>
         <center>
         <h2>Create</h2>
-        <form id=createform method="POST" action="./account_create.php"> 
-            First name:<br>
-            <input type="text" name="firstname" value=""><br><br>
-            Last name:<br>
-            <input type="text" name="lastname" value=""><br><br>
-            Email Address:<br>
-            <input type="text" name="email" value=""><br><br>
-            Password:<br>
-            <input type="text" name="password" value=""><br><br>
+        <form id=createform method="POST" action="./clan_create.php"> 
+            Name:<br>
+            <input type="text" name="name" value=""><br><br>
+            Leader Id:<br>
+            <input type="text" name="leaderid" value=""><br><br>
+            Minimum Level:<br>
+            <input type="text" name="minlevel" value=""><br><br>
             <input type="submit" value="Submit">
             <br><br>
             <div>
@@ -108,10 +104,9 @@
     }
     
     function loadForms() {
-        document.getElementById("results_email").value = findGetParameter("email");
-        document.getElementById("results_firstname").value = findGetParameter("fname");
-        document.getElementById("results_lastname").value = findGetParameter("lname");
-        document.getElementById("results_password").value = findGetParameter("password");
+        document.getElementById("results_name").value = findGetParameter("name");
+        document.getElementById("results_leaderid").value = findGetParameter("leaderid");
+        document.getElementById("results_minlevel").value = findGetParameter("minlevel");
     }
     loadForms();
 </script>

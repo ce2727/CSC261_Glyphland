@@ -17,12 +17,11 @@ $username = "bcalabre";
 $password = "nqjvrUHZ";
 $database = "bcalabre_1";
 $mysqli = new mysqli("localhost", $username, $password, $database);
-$email = $_POST['email'];
-$query = "SELECT * FROM Account WHERE email='$email'";
+$leaderid = $_POST['leaderid'];
+$query = "SELECT * FROM Clan WHERE LeaderID='$leaderid'";
 
-$fname="";
-$lname="";
-$userpassword="";
+$name="";
+$minlevel="";
 
 $conn = mysql_connect($bclabre_1, $username, $password);
    
@@ -30,7 +29,6 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       die('Could not connect: ' . mysql_error());
    }
    
-   //$sql = 'SELECT * FROM Account where email='$email'';
    mysql_select_db('bcalabre_1');
    $retval = mysql_query( $query, $conn );
    
@@ -38,15 +36,12 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       die('Could not get data: ' . mysql_error());
    }
    while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-      $email = $row['Email'];
-      $fname = $row['Firstname'];
-      $lname = $row['Lastname'];
-      $userpassword = $row['Password'];
+      $leaderid = $row['leaderid'];
+      $minlevel = $row['minlevel'];
+      $name = $row['name'];
    }
 
-  //echo "value " . $email . "<br>";
-//$conn->close();
-header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$userpassword#searchForm");
+header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel#searchForm");
 ?>
 </body>
 </html>

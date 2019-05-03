@@ -17,36 +17,40 @@ $username = "bcalabre";
 $password = "nqjvrUHZ";
 $database = "bcalabre_1";
 $mysqli = new mysqli("localhost", $username, $password, $database);
-$email = $_POST['email'];
-$query = "SELECT * FROM Account WHERE email='$email'";
+$query = "";
+$operation = "";
+$status = 1;
+$name = $_POST['results_name'];
+$leaderid = $_POST['results_leaderid'];
+$minlevel = $_POST['results_minlevel'];
 
-$fname="";
-$lname="";
-$userpassword="";
+if (isset($_POST['update_button'])) {
+   //update action
+   $operation = "update";
+   $query = "UPDATE Clan SET Name='$name', MinLevel='$minlevel' WHERE LeaderID='$leaderid'";
+
+} else if (isset($_POST['delete_button'])) {
+   //Delete action
+   $operation = "delete";
+   $query = "DELETE FROM Clan WHERE LeaderID='$leaderid'";
+}
+
 
 $conn = mysql_connect($bclabre_1, $username, $password);
    
    if(! $conn ) {
+      $status = 0;
       die('Could not connect: ' . mysql_error());
    }
    
-   //$sql = 'SELECT * FROM Account where email='$email'';
    mysql_select_db('bcalabre_1');
    $retval = mysql_query( $query, $conn );
    
    if(! $retval ) {
+      $status = 0;
       die('Could not get data: ' . mysql_error());
    }
-   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-      $email = $row['Email'];
-      $fname = $row['Firstname'];
-      $lname = $row['Lastname'];
-      $userpassword = $row['Password'];
-   }
-
-  //echo "value " . $email . "<br>";
-//$conn->close();
-header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$userpassword#searchForm");
+   header("Location: clan.html?operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>

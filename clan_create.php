@@ -23,18 +23,17 @@ if ($conn->query($sql) === TRUE) {
     $status = 0;
 }
 // Query:
-$fname = $_POST['firstname'];
-$lname = $_POST['lastname'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$sql = "INSERT INTO Account VALUES ('$password','$email', '$fname', '$lname');";
+$name = $_POST['name'];
+$leaderid = $_POST['leaderid'];
+$minlevel = $_POST['minlevel'];
+$sql = "INSERT INTO Clan VALUES ('$leaderid','$name', '$minlevel');";
 
 $result = $conn->query($sql);
 
 if ($result !== TRUE) {
     $status = 0;
 }
-header("Location: account.html?email=$email&fname=$fname&lname=$lname&password=$password&operation=$operation&status=$status#createform");
+header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel&operation=$operation&status=$status#createform");
 ?>
 
 <?php
