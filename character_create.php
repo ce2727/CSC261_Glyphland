@@ -16,10 +16,13 @@
 <?php
 require_once('db_setup.php');
 $sql = "USE bcalabre_1;";
+$status = 1;
+$operation = "create";
 if ($conn->query($sql) === TRUE) {
 } else {
-   echo "Error using  database: " . $conn->error;
+    $status = 0;
 }
+
 // Query:
 $displayname = $_POST['displayname'];
 $class = $_POST['class'];
