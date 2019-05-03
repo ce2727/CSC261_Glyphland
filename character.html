@@ -164,6 +164,7 @@
     }
     
     function loadForms() {
+        document.getElementById("results_pid").value = findGetParameter("pid");
         document.getElementById("results_class").value = findGetParameter("class");
         document.getElementById("results_displayname").value = findGetParameter("displayname");
         document.getElementById("results_clan").value = findGetParameter("clan");
