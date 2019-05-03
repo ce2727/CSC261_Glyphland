@@ -25,19 +25,17 @@ $displayname = $_POST['displayname'];
 $class = $_POST['class'];
 $email = $_POST['email'];
 $realm = $_POST['realm'];
-$ID = rand (4 , 2000000000);
-$sql = "INSERT INTO Avatar values ('$ID','$email', '$displayname', '$class', '0', 'NULL', '$realm');";
+$pid = rand (4 , 2000000000);
+$sql = "INSERT INTO Avatar values ('$pid','$email', '$displayname', '$class', '0', 'NULL', '$realm');";
 
 
 
 $result = $conn->query($sql);
 
-if ($result === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+if ($result !== TRUE) {
+    $status = 0;
 }
-
+header("Location: character.html?pid=$pid&displayname=$character_name&class=$class&clan=$clan&level=$level&$clan&realm=$realm&operation=$operation&status=$status#searchForm");
 ?>
 
 <?php
