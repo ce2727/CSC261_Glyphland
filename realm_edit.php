@@ -33,7 +33,7 @@ if (isset($_POST['update_button'])) {
 } else if (isset($_POST['delete_button'])) {
    //Delete action
    $operation = "delete";
-   $query = "DELETE FROM Realm WHERE realmid='$relamid'";
+   $query = "DELETE FROM Realm WHERE realmid='$realmid'";
 }
 
 
