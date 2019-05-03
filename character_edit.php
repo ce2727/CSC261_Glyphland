@@ -24,19 +24,19 @@ $pid = $_POST[''];
 $email = $_POST['email'];
 $character_name = $_POST['displayname'];
 $class = $_POST['class'];
-$level
-$clan
-$realm
+$level = $_POST['level'];
+$clan = $_POST['clan'];
+$realm = $_POST['realm'];
 
 if (isset($_POST['update_button'])) {
    //update action
    $operation = "update";
-   $query = "UPDATE Account SET Firstname='$fname', Lastname='$lname', Password='$user_password' WHERE email='$email'";
+   $query = "UPDATE Avatar SET CharacterName='$character_name', Level='$level', ClanID='$clan', Realm='$realm' WHERE PlayerID='$pid'";
 
 } else if (isset($_POST['delete_button'])) {
    //Delete action
    $operation = "delete";
-   $query = "DELETE FROM Account WHERE email='$email'";
+   $query = "DELETE FROM Avatar WHERE PlayerID='$pid'";
 }
 
 
@@ -55,7 +55,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $status = 0;
       die('Could not get data: ' . mysql_error());
    }
-   header("Location: account.html?operation=$operation&status=$status#searchForm");
+   header("Location: character.html?operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>
