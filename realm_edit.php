@@ -20,10 +20,10 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
 $query = "";
 $operation = "";
 $status = 1;
-$realmid = $_POST['realmid'];
-$language = $_POST['language'];
-$difficulty = $_POST['difficulty'];
-$location = $_POST['location'];
+$realmid = $_POST['results_realmid'];
+$language = $_POST['results_language'];
+$difficulty = $_POST['results_difficulty'];
+$location = $_POST['results_location'];
 
 if (isset($_POST['update_button'])) {
    //update action
