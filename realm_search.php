@@ -49,7 +49,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
       $status = 0;
    }
 
-header("Location: account.html?realmid=$realmid&location=$location&difficulty=$difficulty&location=$location&operation=$operation&status=$status#searchForm");
+header("Location: realm.html?realmid=$realmid&location=$location&difficulty=$difficulty&location=$location&operation=$operation&status=$status#searchForm");
 ?>
 </body>
 </html>
