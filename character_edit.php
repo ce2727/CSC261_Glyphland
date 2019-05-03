@@ -24,8 +24,8 @@ $pid = $_POST[''];
 $email = $_POST['email'];
 $character_name = $_POST['displayname'];
 $class = $_POST['class'];
-$level = -1;
-$clan = 
+$level
+$clan
 $realm
 
 if (isset($_POST['update_button'])) {
