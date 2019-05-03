@@ -35,7 +35,7 @@ $result = $conn->query($sql);
 if ($result !== TRUE) {
     $status = 0;
 }
-header("Location: character.html?pid=$pid&displayname=$character_name&class=$class&clan=$clan&level=$level&$clan&realm=$realm&operation=$operation&status=$status#searchForm");
+header("Location: character.html?pid=$pid&displayname=$character_name&class=$class&level=0&$clan&realm=$realm&operation=$operation&status=$status#createForm");
 ?>
 
 <?php
