@@ -21,10 +21,10 @@ if ($conn->query($sql) === TRUE) {
    echo "Error using  database: " . $conn->error;
 }
 // Query:
-$displayname = $_GET['displayname'];
-$class = $_GET['class'];
-$email = $_GET['email'];
-$realm = $_GET['realm'];
+$displayname = $_POST['displayname'];
+$class = $_POST['class'];
+$email = $_POST['email'];
+$realm = $_POST['realm'];
 $ID = rand (4 , 2000000000);
 $sql = "INSERT INTO Avatar values ('$ID','$email', '$displayname', '$class', '0', 'NULL', '$realm');";
 

@@ -45,6 +45,8 @@
 
         <br>
         <form id=updateForm action="character_edit.php" method="POST">
+            Player ID:<br>
+            <input type="text" id="results_pid" name="results_pid" value=""><br><br>
             Character Name:<br>
             <input type="text" id="results_displayname" name="results_displayname" value=""><br><br>
             Level:<br>
@@ -66,17 +68,17 @@
                     <option value="Warlock">Warlock</option>
                     <option value="Warrior">Warrior</option>
                   </select><br><br>
-                  <label>Realm: </label><select id="results_realm" name="realm">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                    </select><br><br>
+            <label>Realm: </label><select id="results_realm" name="realm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select><br><br>
 
             <input type="submit" name="update_button" value="Update" />
             <input type="submit" name="delete_button" value="Delete" />
@@ -108,17 +110,17 @@
                 <option value="Warlock">Warlock</option>
                 <option value="Warrior">Warrior</option>
               </select><br><br>
-              <label>Realm: </label><select name="realm">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                </select><br><br>
+            <label>Realm: </label><select name="realm">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select><br><br>
     
                 <input type="Submit" value="Submit">
             <br><br>
