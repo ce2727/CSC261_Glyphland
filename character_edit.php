@@ -20,13 +20,13 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
 $query = "";
 $operation = "";
 $status = 1;
-$pid = $_POST[''];
-$email = $_POST['results_email'];
-$character_name = $_POST['results_displayname'];
-$class = $_POST['results_class'];
-$level = $_POST['results_level'];
-$clan = $_POST['results_clan'];
-$realm = $_POST['results_realm'];
+$pid = $_POST['pid'];
+$email = $_POST['email'];
+$character_name = $_POST['displayname'];
+$class = $_POST['class'];
+$level = $_POST['level'];
+$clan = $_POST['clan'];
+$realm = $_POST['realm'];
 
 if (isset($_POST['update_button'])) {
    //update action
