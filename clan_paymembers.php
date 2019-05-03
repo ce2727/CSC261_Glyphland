@@ -16,24 +16,25 @@
 <?php
 require_once('db_setup.php');
 $sql = "USE bcalabre_1;";
-$operation = "create";
+$operation = "pay";
 $status = 1;
 if ($conn->query($sql) === TRUE) {
 } else {
     $status = 0;
 }
 // Query:
-$name = $_POST['name'];
 $leaderid = $_POST['leaderid'];
-$minlevel = $_POST['minlevel'];
-$sql = "INSERT INTO Clan VALUES ('$leaderid','$name', '$minlevel');";
+$amount - $_POST['amount'];
+$sql = "UPDATE BankAccount as ba, Avatar as av
+SET ba.Balance = ba.Balance + $amount
+WHERE av.ClanID = $leaderid;";
 
 $result = $conn->query($sql);
 
 if ($result !== TRUE) {
     $status = 0;
 }
-header("Location: clan.html?name=$name&leaderid=$leaderid&minlevel=$minlevel&operation=$operation&status=$status#createform");
+header("Location: clan.html?leaderid=$leaderid&amount=$amount&operation=$operation&status=$status#payform");
 ?>
 
 <?php
