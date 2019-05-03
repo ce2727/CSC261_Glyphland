@@ -76,6 +76,18 @@
                     <label id="createStatusText"></label>
             </div>
         </form>
+        <h2>Pay Clan Members</h2>
+        <form id=payForm method="POST" action="clan_paymembers.php"> 
+            Leader Id:<br>
+            <input type="text" name="leaderid" value=""><br><br>
+            Amount:<br>
+            <input type="text" name="amount" value=""><br><br>
+            <input type="submit" value="Submit">
+            <br><br>
+            <div>
+                    <label id="payStatusText"></label>
+            </div>
+        </form>
         </center>
     </div>
 </body>
@@ -100,6 +112,10 @@
         }
         if(operation === "search"){
             if(status === "0") document.getElementById("searchStatusText").innerHTML  = "Failed to Find Entry";        
+        }
+        if(operation === "pay"){
+            if(status === "0") document.getElementById("payStatusText").innerHTML  = "Failed to Pay Members";
+            if(status === "1") document.getElementById("payStatusText").innerHTML  = "Paid Members Successfully";              
         }
     }
 
