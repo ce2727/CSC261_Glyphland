@@ -51,7 +51,7 @@ $conn = mysql_connect($bclabre_1, $username, $password);
 
    if($password === "")
    {
-      $email = "";
+      $pid = "";
       $status = 0;
    }
 
