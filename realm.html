@@ -34,7 +34,7 @@
         <div id="resource-box" class="resourceBox">
         <h2>Search</h2>
         <form id=searchForm method="POST" action="realm_search.php">
-            Email:<br>
+            Realm ID:<br>
             <input type="text" name="realmid" value=""><br><br>
             <input type="submit">
             <br><br>
@@ -47,12 +47,31 @@
         <form id=updateForm action="realm_edit.php" method="POST">
             Realm ID:<br>
             <input type="text" id="results_realmid" name="results_realmid" value=""><br><br>
-            Language:<br>
-            <input type="text" id="results_language" name="results_language" value=""><br><br>
-            Difficulty:<br>
-            <input type="text" id="results_difficulty" name="results_difficulty" value=""><br><br>
-            Location:<br>
-            <input type="text" id="results_location" name="results_location" value=""><br><br>
+            <label>Language: </label><select id="results_language" name="language">
+                    <option value="Chinese">Chinese</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                  </select><br><br>
+            <label>Difficulty: </label><select id="results_difficulty" name="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Hard">Hard</option>
+                  </select><br><br>
+            <label>Location: </label><select id="results_location" name="location">
+                <option value="China">China</option>
+                <option value="Germany">Germany</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+                <option value="South America">South America</option>
+                <option value="US East">US East</option>
+                <option value="US West">US West</option>
+                <option value="UK">UK</option>
+                </select><br><br>
 
             <input type="submit" name="update_button" value="Update" />
             <input type="submit" name="delete_button" value="Delete" />
@@ -66,16 +85,33 @@
         <center>
         <h2>Create</h2>
         <form id=createform method="POST" action="account_create.php"> 
-            First name:<br>
+            Realm ID:<br>
             <input type="text" name="realmid" value=""><br><br>
-            Last name:<br>
-            <input type="text" name="language" value=""><br><br>
-            Email Address:<br>
-            <input type="text" name="difficulty" value=""><br><br>
-            Password:<br>
-            <input type="text" name="location" value=""><br><br>
-            <input type="submit" value="Submit">
-            <br><br>
+            <label>Language: </label><select name="language">
+                    <option value="Chinese">Chinese</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                  </select><br><br>
+            <label>Difficulty: </label><select name="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Hard">Hard</option>
+                  </select><br><br>
+            <label>Location: </label><select name="location">
+                <option value="China">China</option>
+                <option value="Germany">Germany</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+                <option value="South America">South America</option>
+                <option value="US East">US East</option>
+                <option value="US West">US West</option>
+                <option value="UK">UK</option>
+                </select><br><br>
             <div>
                     <label id="createStatusText"></label>
             </div>
