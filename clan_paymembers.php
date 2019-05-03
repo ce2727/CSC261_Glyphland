@@ -24,7 +24,7 @@ if ($conn->query($sql) === TRUE) {
 }
 // Query:
 $leaderid = $_POST['leaderid'];
-$amount - $_POST['amount'];
+$amount = $_POST['amount'];
 $sql = "UPDATE BankAccount as ba, Avatar as av
 SET ba.Balance = ba.Balance + $amount
 WHERE av.ClanID = $leaderid;";
@@ -34,7 +34,7 @@ $result = $conn->query($sql);
 if ($result !== TRUE) {
     $status = 0;
 }
-header("Location: clan.html?leaderid=$leaderid&amount=$amount&operation=$operation&status=$status#payform");
+header("Location: clan.html?leaderid=$leaderid&amount=$amount&operation=$operation&status=$status#payForm");
 ?>
 
 <?php
